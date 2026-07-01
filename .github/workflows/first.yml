@@ -1,4 +1,4 @@
-name: My First Workflow
+name: My Second Workflow
 
 on:
   push:
@@ -6,9 +6,18 @@ on:
       - main
 
 jobs:
-  hello:
+  explore:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Current Directory
+        run: pwd
+
+      - name: List Files
+        run: ls -la
+
       - name: Print Message
-        run: echo "Hello GitHub Actions"
+        run: echo "Learning GitHub Actions"
